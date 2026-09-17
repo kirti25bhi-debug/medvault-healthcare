@@ -54,8 +54,8 @@ export function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'contact@ak.com',
-      link: 'mailto:contact@ak.com',
+      value: 'ak@medvault.com',
+      link: 'mailto:ak@medvault.com',
     },
     {
       icon: MapPin,
