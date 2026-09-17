@@ -36,7 +36,7 @@ Method 3: From VS Code Menu
 
 ---
 
-## ⚡ Running the Website
+ Running the Website
 
 All dependencies are already installed!
 
