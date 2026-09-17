@@ -54,8 +54,8 @@ export function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'contact@arogyapralekh.com',
-      link: 'mailto:contact@arogyapralekh.com',
+      value: 'contact@ak.com',
+      link: 'mailto:contact@ak.com',
     },
     {
       icon: MapPin,
