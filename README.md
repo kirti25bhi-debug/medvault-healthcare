@@ -5,7 +5,7 @@ A modern, responsive healthcare platform built with **React**, **TypeScript**, *
 
 ---
 
-## 🚀 Opening in VS Code
+Opening in VS Code
 
 You can open this project in VS Code using any of the following methods:
 
@@ -24,7 +24,7 @@ open /Users/kirtipriya/.gemini/antigravity/scratch/healthcare-website-design
 ```
 Then drag and drop the opened folder into VS Code.
 
-### Method 3: From VS Code Menu
+Method 3: From VS Code Menu
 1. Open VS Code.
 2. Go to **File > Open Folder...**
 3. Press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd> to open the path navigator.
@@ -56,15 +56,14 @@ Alternatively, you can run it using VS Code Tasks:
 
 ---
 
-## 🛠️ Available Scripts
+Available Scripts
 
 - `npm run dev` — Starts local Vite development server with Hot Module Replacement (HMR).
 - `npm run build` — Compiles TypeScript and builds production bundles into `dist/`.
 - `npm run preview` — Previews the production build locally.
 
 ---
-
-## 📁 Project Structure
+Project Structure
 
 ```
 healthcare-website-design/
