@@ -258,8 +258,15 @@ def create_report():
         "<b>RAMTEJ VISSAMSETTI</b> (25BHI10034)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ASHUTOSH MOHANTY</b> (25BHI10129)<br/>"
         "<b>KRISHNA RAJ KUMAR</b> (25BHI10130)"
     )
-    story.append(Paragraph(students_cover_text, ParagraphStyle('TeamCover', fontName='Times-Bold', fontSize=11.5, leading=16, alignment=1, textColor=colors.HexColor('#111111'), spaceAfter=6)))
-    story.append(Spacer(1, 6))
+    story.append(Paragraph(students_cover_text, ParagraphStyle('TeamCover', fontName='Times-Bold', fontSize=11, leading=15, alignment=1, textColor=colors.HexColor('#111111'), spaceAfter=5)))
+    
+    # Faculty Leadership panel on Cover Page
+    faculty_cover_text = (
+        "<b>Project Supervisor:</b> Dr. A. Sirajudeen&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<b>Program Chair:</b> Dr. Abha Trivedi<br/>"
+        "<b>Internal Reviewers:</b> Dr. Trapti Sharma (Reviewer 1)&nbsp;&nbsp;|&nbsp;&nbsp;Dr. Jyoti Chouhan (Reviewer 2)"
+    )
+    story.append(Paragraph(faculty_cover_text, ParagraphStyle('FacultyCover', fontName='Times-Roman', fontSize=9.5, leading=13.5, alignment=1, textColor=colors.HexColor('#333333'), spaceAfter=5)))
+    story.append(Spacer(1, 4))
     story.append(Paragraph("in partial fulfillment for the award of the degree<br/>of", body_cover_italic))
     story.append(Spacer(1, 4))
     story.append(Paragraph("BACHELOR OF TECHNOLOGY", ParagraphStyle('BTech', fontName='Times-Bold', fontSize=15, leading=19, alignment=1, textColor=colors.HexColor('#0D2B3E'))))
@@ -408,13 +415,14 @@ def create_report():
 
     fig_data = [
         [Paragraph("<b>FIGURE NO.</b>", table_header_style), Paragraph("<b>FIGURE TITLE</b>", table_header_style), Paragraph("<b>PAGE NO.</b>", table_header_style)],
-        [Paragraph("<b>Figure 1</b>", table_cell_center), Paragraph("MedVault Three-Tier Unified System Architecture", table_cell_style), Paragraph("10", table_cell_center)],
-        [Paragraph("<b>Figure 2</b>", table_cell_center), Paragraph("Receiver Operating Characteristic (ROC) Benchmark Curves", table_cell_style), Paragraph("18", table_cell_center)],
-        [Paragraph("<b>Figure 3</b>", table_cell_center), Paragraph("Comparative Triage Model Performance on 5,074 Patient Cohort", table_cell_style), Paragraph("19", table_cell_center)],
-        [Paragraph("<b>Figure 4</b>", table_cell_center), Paragraph("Differential Privacy Tradeoff: Accuracy vs Membership Inference Risk", table_cell_style), Paragraph("20", table_cell_center)],
-        [Paragraph("<b>Figure 5</b>", table_cell_center), Paragraph("Cryptographic Ledger Ingestion and Audit Latency Benchmarks", table_cell_style), Paragraph("21", table_cell_center)],
-        [Paragraph("<b>Figure 6</b>", table_cell_center), Paragraph("MedVault AI Diagnostic Analyzer Clinical User Interface", table_cell_style), Paragraph("15", table_cell_center)],
-        [Paragraph("<b>Figure 7</b>", table_cell_center), Paragraph("Live Patient Records & Lab Explorer Interactive Table", table_cell_style), Paragraph("16", table_cell_center)]
+        [Paragraph("<b>Figure 1</b>", table_cell_center), Paragraph("MedVault Overall Three-Tier System Architecture Diagram", table_cell_style), Paragraph("15", table_cell_center)],
+        [Paragraph("<b>Figure 2</b>", table_cell_center), Paragraph("MedVault Clinical Data Flow Diagram (DFD)", table_cell_style), Paragraph("16", table_cell_center)],
+        [Paragraph("<b>Figure 3</b>", table_cell_center), Paragraph("Empirical System Integration Testing on Live MedVault Portal Environment", table_cell_style), Paragraph("19", table_cell_center)],
+        [Paragraph("<b>Figure 4</b>", table_cell_center), Paragraph("Live AI Diagnostic Analyzer Test Execution (Critical Inpatient Vector TC-TRIAGE-CRIT-001)", table_cell_style), Paragraph("20", table_cell_center)],
+        [Paragraph("<b>Figure 5</b>", table_cell_center), Paragraph("Receiver Operating Characteristic (ROC) Benchmark Curves", table_cell_style), Paragraph("21", table_cell_center)],
+        [Paragraph("<b>Figure 6</b>", table_cell_center), Paragraph("Comparative Triage Model Performance on 5,074 Patient Cohort", table_cell_style), Paragraph("22", table_cell_center)],
+        [Paragraph("<b>Figure 7</b>", table_cell_center), Paragraph("Differential Privacy Tradeoff: Accuracy vs Membership Inference Risk", table_cell_style), Paragraph("23", table_cell_center)],
+        [Paragraph("<b>Figure 8</b>", table_cell_center), Paragraph("Cryptographic Ledger Ingestion and Audit Latency Benchmarks", table_cell_style), Paragraph("23", table_cell_center)]
     ]
     fig_table = Table(fig_data, colWidths=[90, 320, 70])
     fig_table.setStyle(TableStyle([
@@ -432,12 +440,11 @@ def create_report():
 
     tbl_data = [
         [Paragraph("<b>TABLE NO.</b>", table_header_style), Paragraph("<b>TABLE TITLE</b>", table_header_style), Paragraph("<b>PAGE NO.</b>", table_header_style)],
-        [Paragraph("<b>Table 1</b>", table_cell_center), Paragraph("Comparison of Existing EHR Architectures and Integrity Methods", table_cell_style), Paragraph("6", table_cell_center)],
-        [Paragraph("<b>Table 2</b>", table_cell_center), Paragraph("Clinical Biomarker Distributions and Statistical Reference Ranges (N=5,074)", table_cell_style), Paragraph("8", table_cell_center)],
-        [Paragraph("<b>Table 3</b>", table_cell_center), Paragraph("Hardware and Software Technology Stack Specifications", table_cell_style), Paragraph("9", table_cell_center)],
-        [Paragraph("<b>Table 4</b>", table_cell_center), Paragraph("Predictive Performance Comparison Across Clinical Classifiers", table_cell_style), Paragraph("18", table_cell_center)],
-        [Paragraph("<b>Table 5</b>", table_cell_center), Paragraph("Cryptographic Ledger Latency and Throughput Under Scaled Batches", table_cell_style), Paragraph("20", table_cell_center)],
-        [Paragraph("<b>Table 6</b>", table_cell_center), Paragraph("Differential Privacy Sensitivity and Utility Tradeoff (ε sweep)", table_cell_style), Paragraph("21", table_cell_center)]
+        [Paragraph("<b>Table 1</b>", table_cell_center), Paragraph("Comparison of Existing EHR Architectures and Integrity Methods", table_cell_style), Paragraph("11", table_cell_center)],
+        [Paragraph("<b>Table 2</b>", table_cell_center), Paragraph("Hardware and Software Technology Stack Specifications", table_cell_style), Paragraph("12", table_cell_center)],
+        [Paragraph("<b>Table 3</b>", table_cell_center), Paragraph("Live Production Portal Functional Integration Test Assertions", table_cell_style), Paragraph("19", table_cell_center)],
+        [Paragraph("<b>Table 4</b>", table_cell_center), Paragraph("AI Clinical Diagnostic Analyzer Boundary Test Assertions", table_cell_style), Paragraph("20", table_cell_center)],
+        [Paragraph("<b>Table 5</b>", table_cell_center), Paragraph("Predictive Performance Comparison Across Clinical Classifiers", table_cell_style), Paragraph("21", table_cell_center)]
     ]
     tbl_table = Table(tbl_data, colWidths=[90, 320, 70])
     tbl_table.setStyle(TableStyle([
@@ -454,7 +461,8 @@ def create_report():
     # 6. ABSTRACT (PURPOSE - METHODOLOGY - FINDINGS)
     # =========================================================================
     story.append(Paragraph("ABSTRACT", h1_style))
-    story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor('#2A9D7E'), spaceAfter=14))
+    story.append(Paragraph("<b>[PURPOSE – METHODOLOGY – FINDINGS]</b>", ParagraphStyle('AbsSub', fontName='Times-Bold', fontSize=12, leading=16, alignment=1, textColor=colors.HexColor('#2A9D7E'), spaceAfter=8)))
+    story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor('#2A9D7E'), spaceAfter=12))
     
     abstract_text = (
         "<b>[PURPOSE]</b><br/>"
@@ -494,25 +502,49 @@ def create_report():
     story.append(Paragraph("TABLE OF CONTENTS", h1_style))
     story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor('#2A9D7E'), spaceAfter=14))
 
+    toc_cell = ParagraphStyle(
+        'TOCCell',
+        fontName='Times-Roman',
+        fontSize=8,
+        leading=10.5,
+        textColor=colors.HexColor('#222222')
+    )
+    toc_cell_c = ParagraphStyle(
+        'TOCCellCenter',
+        fontName='Times-Roman',
+        fontSize=8,
+        leading=10.5,
+        textColor=colors.HexColor('#222222'),
+        alignment=1
+    )
+    toc_head_style = ParagraphStyle(
+        'TOCHeader',
+        fontName='Times-Bold',
+        fontSize=8.5,
+        leading=11.5,
+        textColor=colors.white,
+        alignment=1
+    )
+
     toc_data = [
-        [Paragraph("<b>CHAPTER NO.</b>", table_header_style), Paragraph("<b>CHAPTER TITLE / SUBSECTIONS</b>", table_header_style), Paragraph("<b>PAGE NO.</b>", table_header_style)],
-        [Paragraph("--", table_cell_center), Paragraph("Bonafide Certificate<br/>Acknowledgement<br/>List of Abbreviations<br/>List of Figures and Tables<br/>Abstract (Purpose - Methodology - Findings)", table_cell_style), Paragraph("ii<br/>iii<br/>iv<br/>v<br/>vi", table_cell_center)],
-        [Paragraph("<b>1</b>", table_cell_center), Paragraph("<b>PROJECT DESCRIPTION AND OUTLINE</b><br/>1.1 Introduction<br/>1.2 Motivation for the Work<br/>1.3 Introduction to the Project Including Techniques<br/>1.4 Problem Statement<br/>1.5 Objectives of the Work<br/>1.6 Organization of the Project<br/>1.7 Summary", table_cell_style), Paragraph("1", table_cell_center)],
-        [Paragraph("<b>2</b>", table_cell_center), Paragraph("<b>RELATED WORK INVESTIGATION</b><br/>2.1 Introduction<br/>2.2 Core Area of the Project<br/>2.3 Existing Approaches and Methods<br/>2.4 Pros and Cons of Stated Approaches<br/>2.5 Issues and Observations from Investigation<br/>2.6 Summary", table_cell_style), Paragraph("5", table_cell_center)],
-        [Paragraph("<b>3</b>", table_cell_center), Paragraph("<b>REQUIREMENT ARTIFACTS</b><br/>3.1 Introduction<br/>3.2 Hardware and Software Requirements<br/>3.3 Specific Project Requirements (Data, Functions, Security, Look & Feel)<br/>3.4 Summary", table_cell_style), Paragraph("8", table_cell_center)],
-        [Paragraph("<b>4</b>", table_cell_center), Paragraph("<b>DESIGN METHODOLOGY AND ITS NOVELTY</b><br/>4.1 Methodology and Goal<br/>4.2 Functional Modules Design and Analysis<br/>4.3 Software Architectural Designs (Three-Tier Pipeline)<br/>4.4 Subsystem Services (DQA, Merkle Cryptographic Ledger, Triage)<br/>4.5 User Interface Designs<br/>4.6 Summary", table_cell_style), Paragraph("11", table_cell_center)],
-        [Paragraph("<b>5</b>", table_cell_center), Paragraph("<b>TECHNICAL IMPLEMENTATION & ANALYSIS</b><br/>5.1 Outline<br/>5.2 Technical Coding and Code Solutions<br/>5.3 Working Layout of Forms<br/>5.4 Prototype Submission and Deployment<br/>5.5 Test and Validation<br/>5.6 Performance Analysis (ROC Curves, Latency, DP Sweep)<br/>5.7 Summary", table_cell_style), Paragraph("14", table_cell_center)],
-        [Paragraph("<b>6</b>", table_cell_center), Paragraph("<b>PROJECT OUTCOME AND APPLICABILITY</b><br/>6.1 Outline<br/>6.2 Key Implementations Outlines of the System<br/>6.3 Significant Project Outcomes<br/>6.4 Project Applicability on Real-World Applications<br/>6.5 Inference", table_cell_style), Paragraph("22", table_cell_center)],
-        [Paragraph("<b>7</b>", table_cell_center), Paragraph("<b>CONCLUSIONS AND RECOMMENDATIONS</b><br/>7.1 Outline<br/>7.2 Limitations and Constraints of the System<br/>7.3 Future Enhancements<br/>7.4 Inference", table_cell_style), Paragraph("24", table_cell_center)],
-        [Paragraph("--", table_cell_center), Paragraph("<b>REFERENCES</b> (IEEE / Springer Format)<br/><b>APPENDIX A: Clinical Reference Ranges Standards</b><br/><b>APPENDIX B: REST API Specifications</b>", table_cell_style), Paragraph("26<br/>28<br/>29", table_cell_center)]
+        [Paragraph("<b>CHAPTER NO.</b>", toc_head_style), Paragraph("<b>CHAPTER TITLE / SUBSECTIONS</b>", toc_head_style), Paragraph("<b>PAGE NO.</b>", toc_head_style)],
+        [Paragraph("--", toc_cell_c), Paragraph("Bonafide Certificate<br/>Acknowledgement<br/>List of Abbreviations<br/>List of Figures and Tables<br/>Abstract (Purpose - Methodology - Findings)", toc_cell), Paragraph("ii<br/>iii<br/>iv<br/>v<br/>vi", toc_cell_c)],
+        [Paragraph("<b>1</b>", toc_cell_c), Paragraph("<b>PROJECT DESCRIPTION AND OUTLINE</b><br/>1.1 Introduction<br/>1.2 Motivation for the Work<br/>1.3 Introduction to the Project Including Techniques<br/>1.4 Problem Statement<br/>1.5 Objectives of the Work<br/>1.6 Organization of the Project<br/>1.7 Summary", toc_cell), Paragraph("8", toc_cell_c)],
+        [Paragraph("<b>2</b>", toc_cell_c), Paragraph("<b>RELATED WORK INVESTIGATION</b><br/>2.1 Introduction<br/>2.2 Core Area of the Project<br/>2.3 Existing Approaches and Methods<br/>2.4 Pros and Cons of Stated Approaches<br/>2.5 Issues and Observations from Investigation<br/>2.6 Summary", toc_cell), Paragraph("10", toc_cell_c)],
+        [Paragraph("<b>3</b>", toc_cell_c), Paragraph("<b>REQUIREMENT ARTIFACTS</b><br/>3.1 Introduction<br/>3.2 Hardware and Software Requirements<br/>3.3 Specific Project Requirements (Data, Functions, Security, Look & Feel)<br/>3.4 Summary", toc_cell), Paragraph("12", toc_cell_c)],
+        [Paragraph("<b>4</b>", toc_cell_c), Paragraph("<b>DESIGN METHODOLOGY AND ITS NOVELTY</b><br/>4.1 Methodology and Goal<br/>4.2 Functional Modules Design and Analysis<br/>4.3 Software Architectural Designs (Three-Tier Pipeline)<br/>4.4 Subsystem Services (DQA, Merkle Cryptographic Ledger, Triage)<br/>4.5 User Interface Designs<br/>4.6 Summary", toc_cell), Paragraph("14", toc_cell_c)],
+        [Paragraph("<b>5</b>", toc_cell_c), Paragraph("<b>TECHNICAL IMPLEMENTATION & ANALYSIS</b><br/>5.1 Outline<br/>5.2 Technical Coding and Code Solutions<br/>5.3 Working Layout of Forms<br/>5.4 Prototype Submission and Deployment<br/>5.5 Test and Validation<br/>5.6 Performance Analysis (ROC Curves, Latency, DP Sweep)<br/>5.7 Summary", toc_cell), Paragraph("18", toc_cell_c)],
+        [Paragraph("<b>6</b>", toc_cell_c), Paragraph("<b>PROJECT OUTCOME AND APPLICABILITY</b><br/>6.1 Outline<br/>6.2 Key Implementations Outlines of the System<br/>6.3 Significant Project Outcomes<br/>6.4 Project Applicability on Real-World Applications<br/>6.5 Inference", toc_cell), Paragraph("24", toc_cell_c)],
+        [Paragraph("<b>7</b>", toc_cell_c), Paragraph("<b>CONCLUSIONS AND RECOMMENDATIONS</b><br/>7.1 Outline<br/>7.2 Limitations and Constraints of the System<br/>7.3 Future Enhancements<br/>7.4 Inference", toc_cell), Paragraph("26", toc_cell_c)],
+        [Paragraph("--", toc_cell_c), Paragraph("<b>REFERENCES</b> (IEEE / Springer Format)<br/><b>APPENDIX A: Clinical Reference Ranges Standards</b><br/><b>APPENDIX B: REST API Specifications</b>", toc_cell), Paragraph("27<br/>28<br/>28", toc_cell_c)]
     ]
-    toc_table = Table(toc_data, colWidths=[90, 320, 70])
+    toc_table = Table(toc_data, colWidths=[85, 330, 65])
     toc_table.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#0D2B3E')),
         ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor('#dddddd')),
         ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, colors.HexColor('#F8FCFA')]),
-        ('TOPPADDING', (0,0), (-1,-1), 5),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 5),
+        ('TOPPADDING', (0,0), (-1,-1), 2.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
     ]))
     story.append(toc_table)
     story.append(PageBreak())
@@ -719,7 +751,7 @@ def create_report():
         ('BOTTOMPADDING', (0,0), (-1,-1), 4),
     ]))
     story.append(hw_sw_table)
-    story.append(Paragraph("Table 3: Hardware and Software Technology Stack Specifications", caption_style))
+    story.append(Paragraph("Table 2: Hardware and Software Technology Stack Specifications", caption_style))
 
     story.append(Paragraph("3.3 Specific Project Requirements", h2_style))
     story.append(Paragraph(
@@ -806,14 +838,23 @@ def create_report():
         ('BOTTOMPADDING', (0,0), (-1,-1), 8),
     ]))
     if os.path.exists("medvault_architecture.png"):
-        story.append(Image("medvault_architecture.png", width=440, height=295))
-        story.append(Paragraph("Figure 1: MedVault Overall System Architecture Diagram", caption_style))
+        story.append(Image("medvault_architecture.png", width=440, height=310))
+        story.append(Paragraph("Figure 1: MedVault Overall Three-Tier System Architecture Diagram", caption_style))
     else:
         story.append(arch_box_table)
         story.append(Paragraph("Figure 1: MedVault Three-Tier Unified System Architecture", caption_style))
-    story.append(Spacer(1, 8))
+    story.append(PageBreak())
+
+    story.append(Paragraph("4.3.1 Clinical Data Flow Architecture (DFD)", h2_style))
+    story.append(Paragraph(
+        "Figure 2 illustrates the end-to-end data processing workflow across all three tiers of the MedVault framework, "
+        "tracing the journey from patient registration through algorithmic DQA validation, cryptographic Merkle tree sealing, "
+        "and differentially private risk inference.",
+        body_style
+    ))
+    story.append(Spacer(1, 6))
     if os.path.exists("medvault_dataflow.png"):
-        story.append(Image("medvault_dataflow.png", width=440, height=270))
+        story.append(Image("medvault_dataflow.png", width=440, height=290))
         story.append(Paragraph("Figure 2: MedVault Clinical Data Flow Diagram (DFD)", caption_style))
 
     story.append(Paragraph("4.4 Subsystem Services and Mathematical Novelty", h2_style))
@@ -927,17 +968,68 @@ def create_report():
         body_style
     ))
     story.append(Spacer(1, 6))
+    # Test assertions table
+    test_portal_data = [
+        [Paragraph("<b>Verification Checkpoint</b>", table_header_style), Paragraph("<b>Expected Specification</b>", table_header_style), Paragraph("<b>Observed Runtime State</b>", table_header_style), Paragraph("<b>Status</b>", table_header_style)],
+        [Paragraph("Clinical Dataset Index", table_cell_style), Paragraph("5,074 Hematology Records", table_cell_style), Paragraph("5,074+ Verified Clinical Records Active", table_cell_style), Paragraph("<b>PASS</b>", table_cell_center)],
+        [Paragraph("Cryptographic Ledger", table_cell_style), Paragraph("Balanced Merkle Tree + HMAC", table_cell_style), Paragraph("SHA-256 Tamper-Evident Ledger Connected", table_cell_style), Paragraph("<b>PASS</b>", table_cell_center)],
+        [Paragraph("Differential Privacy", table_cell_style), Paragraph("Bounded Laplace (ε ≤ 1.0)", table_cell_style), Paragraph("Differential Privacy Active (ε = 1.0)", table_cell_style), Paragraph("<b>PASS</b>", table_cell_center)],
+        [Paragraph("Triage Latency SLA", table_cell_style), Paragraph("< 50 ms End-to-End", table_cell_style), Paragraph("< 15 ms Live Triage Verified", table_cell_style), Paragraph("<b>PASS</b>", table_cell_center)]
+    ]
+    t_portal_tbl = Table(test_portal_data, colWidths=[120, 140, 160, 60])
+    t_portal_tbl.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#0D2B3E')),
+        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor('#CCCCCC')),
+        ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, colors.HexColor('#F8FCFA')]),
+        ('TOPPADDING', (0,0), (-1,-1), 3),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+    ]))
+    story.append(t_portal_tbl)
+    story.append(Paragraph("Table 3: Live Production Portal Functional Integration Test Assertions", caption_style))
+    story.append(Spacer(1, 6))
+
     if os.path.exists("test_snapshot_hero.png"):
         story.append(Image("test_snapshot_hero.png", width=440, height=225))
         story.append(Paragraph("Figure 3: Empirical System Integration Testing on Live MedVault Portal Environment", caption_style))
+    story.append(PageBreak())
+
+    story.append(Paragraph("5.5.1 AI Clinical Diagnostic Analyzer Boundary Test Execution", h3_style))
+    story.append(Paragraph(
+        "To validate diagnostic precision under critical pathological conditions, test vector `TC-TRIAGE-CRIT-001` was executed "
+        "against the live AI Hematology Lab Test Analyzer. As captured in Figure 4, the patient profile exhibited severe hematological derangements: "
+        "Leucocytes (WBC) = 14.2 × 10³/µL, Thrombocytes (PLT) = 95 × 10³/µL, Erythrocytes (RBC) = 3.8 × 10⁶/µL, and Haemoglobins (HGB) = 11.2 g/dL. "
+        "The system triggered immediate critical red-flags and recommended acute inpatient care protocols with 87% admission risk.",
+        body_style
+    ))
+    story.append(Spacer(1, 4))
+
+    test_diag_data = [
+        [Paragraph("<b>Parameter / Flag</b>", table_header_style), Paragraph("<b>Input Test Value</b>", table_header_style), Paragraph("<b>Clinical Interpretation</b>", table_header_style), Paragraph("<b>System Outcome</b>", table_header_style)],
+        [Paragraph("Leucocytes (WBC)", table_cell_style), Paragraph("14.2 × 10³/µL", table_cell_style), Paragraph("Marked Leukocytosis (Infection/Leukemia)", table_cell_style), Paragraph("Emergency Red-Flag", table_cell_center)],
+        [Paragraph("Thrombocytes (PLT)", table_cell_style), Paragraph("95 × 10³/µL", table_cell_style), Paragraph("Moderate Thrombocytopenia (< 100k)", table_cell_style), Paragraph("Emergency Red-Flag", table_cell_center)],
+        [Paragraph("Admission Risk Score", table_cell_style), Paragraph("Calculated Logistic + Red Flag", table_cell_style), Paragraph("High Clinical Severity", table_cell_style), Paragraph("<b>87% Risk (IN-CARE)</b>", table_cell_center)],
+        [Paragraph("Clinical Protocol Trigger", table_cell_style), Paragraph("Deterministic Checklist", table_cell_style), Paragraph("Urgent Consult, STAT Smear, Platelet Prep", table_cell_style), Paragraph("<b>VERIFIED PASS</b>", table_cell_center)]
+    ]
+    t_diag_tbl = Table(test_diag_data, colWidths=[120, 110, 160, 90])
+    t_diag_tbl.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#0D2B3E')),
+        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor('#CCCCCC')),
+        ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, colors.HexColor('#F8FCFA')]),
+        ('TOPPADDING', (0,0), (-1,-1), 3),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+    ]))
+    story.append(t_diag_tbl)
+    story.append(Paragraph("Table 4: AI Clinical Diagnostic Analyzer Boundary Test Assertions", caption_style))
     story.append(Spacer(1, 6))
+
     if os.path.exists("test_snapshot_analyzer.png"):
-        story.append(Image("test_snapshot_analyzer.png", width=440, height=230))
+        story.append(Image("test_snapshot_analyzer.png", width=440, height=225))
         story.append(Paragraph("Figure 4: Live AI Diagnostic Analyzer Test Execution (Critical Inpatient Vector TC-TRIAGE-CRIT-001)", caption_style))
+    story.append(PageBreak())
 
     story.append(Paragraph("5.6 Performance Analysis (Graphs & Charts)", h2_style))
     story.append(Paragraph(
-        "Table 4 summarizes the classification performance of the MedVault triage engine against standard machine learning baselines on the independent test set.",
+        "Table 5 summarizes the classification performance of the MedVault triage engine against standard machine learning baselines on the independent test set.",
         body_style
     ))
 
@@ -957,31 +1049,31 @@ def create_report():
         ('BOTTOMPADDING', (0,0), (-1,-1), 4),
     ]))
     story.append(bench_table)
-    story.append(Paragraph("Table 4: Predictive Performance Comparison Across Clinical Classifiers", caption_style))
+    story.append(Paragraph("Table 5: Predictive Performance Comparison Across Clinical Classifiers", caption_style))
     story.append(Spacer(1, 10))
 
-    # Embed Figure 2: ROC Curves
+    # Embed Figure 5: ROC Curves
     if os.path.exists("figure_roc_curves.png"):
-        story.append(Image("figure_roc_curves.png", width=340, height=255))
-        story.append(Paragraph("Figure 2: Receiver Operating Characteristic (ROC) Benchmark Curves", caption_style))
-    story.append(Spacer(1, 10))
+        story.append(Image("figure_roc_curves.png", width=340, height=240))
+        story.append(Paragraph("Figure 5: Receiver Operating Characteristic (ROC) Benchmark Curves", caption_style))
+    story.append(Spacer(1, 8))
 
-    # Embed Figure 3: Model Comparison Bar Chart
+    # Embed Figure 6: Model Comparison Bar Chart
     if os.path.exists("figure_model_comparison.png"):
-        story.append(Image("figure_model_comparison.png", width=360, height=230))
-        story.append(Paragraph("Figure 3: Comparative Triage Model Performance on 5,074 Patient Cohort", caption_style))
-    story.append(Spacer(1, 10))
+        story.append(Image("figure_model_comparison.png", width=350, height=220))
+        story.append(Paragraph("Figure 6: Comparative Triage Model Performance on 5,074 Patient Cohort", caption_style))
+    story.append(PageBreak())
 
-    # Embed Figure 4: DP Tradeoff
+    # Embed Figure 7: DP Tradeoff
     if os.path.exists("figure_dp_tradeoff.png"):
-        story.append(Image("figure_dp_tradeoff.png", width=340, height=235))
-        story.append(Paragraph("Figure 4: Differential Privacy Tradeoff: Accuracy vs Membership Inference Risk", caption_style))
-    story.append(Spacer(1, 10))
+        story.append(Image("figure_dp_tradeoff.png", width=340, height=230))
+        story.append(Paragraph("Figure 7: Differential Privacy Tradeoff: Accuracy vs Membership Inference Risk", caption_style))
+    story.append(Spacer(1, 8))
 
-    # Embed Figure 5: Crypto Latency
+    # Embed Figure 8: Crypto Latency
     if os.path.exists("figure_crypto_latency.png"):
-        story.append(Image("figure_crypto_latency.png", width=340, height=235))
-        story.append(Paragraph("Figure 5: Cryptographic Ledger Ingestion and Audit Latency Benchmarks", caption_style))
+        story.append(Image("figure_crypto_latency.png", width=340, height=230))
+        story.append(Paragraph("Figure 8: Cryptographic Ledger Ingestion and Audit Latency Benchmarks", caption_style))
 
     story.append(Paragraph("5.7 Summary", h2_style))
     story.append(Paragraph(
